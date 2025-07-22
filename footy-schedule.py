@@ -1,7 +1,8 @@
 import requests
 
+# TODO: get FA Cup and League One schedules - maybe separate api or web-scraping?
+
 competitions = {
-    # 'FA Cup': 'FAC',
     'Premier League': 'PL',
     'Champions League': 'CL',
     'Serie A': 'SA',
@@ -70,7 +71,7 @@ for name, code in competitions.items():
     if code == 'CL':
         uri = f'https://api.football-data.org/v4/competitions/{code}/matches'
     else:
-        uri = f'https://api.football-data.org/v4/competitions/{code}/matches?matchday=22'
+        uri = f'https://api.football-data.org/v4/competitions/{code}/matches?matchday=23'
 
     response = requests.get(uri, headers=headers)
     data = response.json()
